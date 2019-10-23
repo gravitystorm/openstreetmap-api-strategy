@@ -10,7 +10,7 @@ The version numbers in the API and in the XML attact a lot of heat, so let's dis
 
 ## SemVer
 
-A popular concept in software is to use SemVer, or Semantic Versioning, where the numbers used imply something about the compatibility. In summary:
+A popular concept in software is to use [SemVer](https://semver.org/), or Semantic Versioning, where the numbers used imply something about the compatibility. In summary:
 
 Given a version number MAJOR.MINOR.PATCH, increment the:
 
@@ -24,12 +24,12 @@ https://stackoverflow.com/questions/27901549/semantic-versioning-of-rest-apis ex
 
 ### In OpenStreetMap
 
-To be clear: **We don't use SemVer in the API versions**. We currently use this system:
+To be clear: **We don't use SemVer in the API versions**. Not yet, at least. We currently use this system:
 
  * First number has always been zero
  * Second number is changed when we make backwards incompatible changes to the API.
 
-If we want to move to SemVer for our API in future, we could simply convert the second number to be the MAJOR number. So instead of version `0.8`, we can just call it version `8`. I don't think that we should make this change for 0.7 though.
+If we want to move to SemVer for our API in future, we could simply convert our second number to be the MAJOR number as per SemVer. So instead of version `0.8`, we can just call it version `8`. I don't think that we should make this change for 0.7 though.
 
 ## Version numbers in the OpenStreetMap API
 
