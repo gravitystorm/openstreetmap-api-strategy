@@ -5,7 +5,20 @@
 layout: home
 ---
 
-Since a 50+ comment thread on a PR implementing a tiny part of the API upgrade isn't very user-friendly, I thought I'd make a better site to describe the situation.
+Since a 50+ comment thread on a PR implementing a tiny part of this proposed API upgrade isn't very user-friendly, and leads to poor-quality discussions, this website takes a different approach.
+
+# The timeline
+
+* Provide API consumers a more robust way to detect available versions ([DONE](https://github.com/openstreetmap/openstreetmap-website/pull/2280))
+* Develop code to allow multiple API versions in parallel, but with only 0.6 activated (PENDING, waiting on review) <- we are here
+* Develop individual changes that we want to see in 0.7, merge them in one at a time
+* Provide a test site on the dev server with API 0.7 enabled
+* Gain consensus that API 0.7 is ready for primetime
+* Activate API 0.7 in parallel to API 0.6
+* Allow plenty of time for client software to update, monitor number of requests to 0.6
+* Months or years later, announce the deprecation of 0.6
+* Switch off API 0.6
+* Remove the unversioned /api/capabilities call
 
 # The strategy
 
@@ -23,7 +36,7 @@ If I was given free reign, I would call the next version of the API version 7 in
 
 All previous upgrades have been "big bang" upgrades, where we turned off the API (sometimes for days) during the upgrade, and only one version of the API was ever available at the same time. Given the size of OSM, and the amount of software that uses the API, I don't think this is feasible today. So my strategy is to ensure that 0.7 will be deployed in parallel to 0.6, to give plenty of time for everyone to upgrade.
 
-## No set list of changes
+## No upfront list of changes
 
 I believe it's a bad approach to make a set list of changes before trying to implement them. So I first want to build a framework that allows us implement changes to the API, then work through each idea and consider them in turn, and then release 0.7 when we agree that there's enough changes to be worth it. Further changes can be made in 0.8.
 
